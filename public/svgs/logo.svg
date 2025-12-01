@@ -1,0 +1,18 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  
+  <g transform="translate(10, 0)">
+    <circle cx="50" cy="50" r="15" fill="#B7D16A"/>
+    
+    <path d="M 50 10 A 40 40 0 0 1 90 50" fill="none" stroke="#429993" stroke-width="8" stroke-linecap="round"/>
+    
+    <path d="M 10 50 A 40 40 0 0 1 50 90" fill="none" stroke="#429993" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <g transform="translate(120, 0)">
+    
+    <text x="0" y="47" font-family="Montserrat, sans-serif" font-size="40" font-weight="bold" fill="#429993">ELON</text>
+    
+    <text x="0" y="82" font-family="Montserrat, sans-serif" font-size="30" fill="#429993">Physio</text>
+    
+  </g>
+</svg>
