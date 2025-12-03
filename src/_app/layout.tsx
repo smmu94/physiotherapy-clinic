@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/navbar";
+import { useLocale } from "next-globe-gen";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
@@ -28,9 +29,9 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-
+  const locale = useLocale();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${montserrat.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         {children}

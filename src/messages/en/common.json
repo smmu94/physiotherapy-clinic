@@ -1,0 +1,9 @@
+{
+    "navbar": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About Us",
+        "contact": "Contact",
+        "booking": "Book Appointment"
+    }
+}

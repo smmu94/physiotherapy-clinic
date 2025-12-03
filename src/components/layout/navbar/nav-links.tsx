@@ -1,28 +1,26 @@
-import { routes } from "@/lib/routes";
+import { useTranslations } from "next-globe-gen";
 import Link from "next/link";
-import { NavLinksProps } from "./types";
 import { navItems } from "./constants";
+import { NavLinksProps } from "./types";
 
 export default function NavLinks({ onLinkClick, isMobile = false }: NavLinksProps) {
-  return (
+    const t = useTranslations("common");
+    return (
     <>
       {navItems.map((link) => (
         <Link
           key={link.href}
           href={link.href}
           onClick={onLinkClick}
-          className="text-preset-4 hover:text-primary transition-colors"
+          className={
+            link.label === "navbar.booking"
+              ? `btn-primary ${isMobile ? "text-center" : ""}`
+              : "text-preset-4 hover:text-primary transition-colors"
+          }
         >
-          {link.label}
+          {t(link.label)}
         </Link>
       ))}
-      <Link
-        href={routes.booking}
-        onClick={onLinkClick}
-        className={`btn-primary ${isMobile ? "text-center" : ""}`}
-      >
-        Book Appointment
-      </Link>
     </>
   );
 }

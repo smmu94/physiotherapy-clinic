@@ -1,6 +1,6 @@
 import { routes } from "@/lib/routes";
-import { Option } from "../form/select/types";
 import Image from "next/image";
+import { Option } from "../../form/select/types";
 
 export const languageOptions: Option[] = [
   {
@@ -16,8 +16,9 @@ export const languageOptions: Option[] = [
 ];
 
 export const navItems = [
-  { href: routes.home, label: "Home" },
-  { href: routes.services, label: "Services" },
-  { href: routes.about, label: "About Us" },
-  { href: routes.contact, label: "Contact" },
-];
+  { href: routes.home, label: "navbar.home" },
+  { href: routes.services, label: "navbar.services" },
+  { href: routes.about, label: "navbar.about" },
+  { href: routes.contact, label: "navbar.contact" },
+  { href: routes.booking, label: "navbar.booking" },
+] as const;

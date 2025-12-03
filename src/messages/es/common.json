@@ -1,0 +1,9 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "about": "Acerca de nosotros",
+        "contact": "Contacto",
+        "booking": "Reservar cita"
+    }
+}
