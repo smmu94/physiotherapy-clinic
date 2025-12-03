@@ -1,6 +1,7 @@
+import Navbar from "@/components/layout/navbar";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
-import "./globals.css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,16 +23,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} ${poppins.variable} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

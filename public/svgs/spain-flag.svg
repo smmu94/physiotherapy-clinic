@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+  <!-- Franjas rojas y amarilla -->
+  <path fill="#AA151B" d="M0 0h750v150H0z"/>
+  <path fill="#F1BF00" d="M0 150h750v200H0z"/>
+  <path fill="#AA151B" d="M0 350h750v150H0z"/>
+</svg>
