@@ -12,12 +12,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-gray bg-white">
+    <nav className="w-full border-b border-gray bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between px-4 py-4">
         <Link href={routes.home} className="text-preset-4-bold text-primary shrink-0">
           <Image src="/svgs/logo.svg" alt="Logo" width={200} height={50} />
         </Link>
-        <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
+        <div className="hidden md:flex items-center gap-4 flex-1 justify-center">
           <NavLinks />
         </div>
         <div className="flex items-center gap-4 shrink-0">

@@ -3,6 +3,7 @@ import { useLocale } from "next-globe-gen";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import Footer from "@/components/layout/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -32,9 +33,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const locale = useLocale();
   return (
     <html lang={locale}>
-      <body className={`${montserrat.variable} ${poppins.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}>
         <Navbar />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

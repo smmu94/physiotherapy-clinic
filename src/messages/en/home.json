@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "title": "Your path to recovery and well-being starts here",
+    "description": "Professional physiotherapy clinic dedicated to your health and movement.",
+    "cta": "Book an appointment"
+  },
+  "aboutAndServices": {
+    "title": "Our Clinic",
+    "description": "At ELON Physio, our mission is to provide you with personalized and effective care, using the most advanced techniques to ensure a fast and lasting recovery. We are committed to excellence and the well-being of every one of our patients.",
+    "serviceDescription": "We offer a wide range of physiotherapy services tailored to your specific needs. Our key services include:",
+    "services": {
+      "first": {
+        "title": "Sports Physiotherapy",
+        "description": "Specialized care for sports injuries and physical preparation."
+      },
+      "second": {
+        "title": "Manual Therapy",
+        "description": "Hands-on techniques to relieve pain, improve mobility, and restore joint function."
+      },
+      "third": {
+        "title": "Post-Surgical Rehabilitation",
+        "description": "Personalized programs for safe and effective recovery after surgery."
+      }
+    },
+    "cta": "Explore all our services"
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "description": "ELON Physio is home to a multidisciplinary team of physiotherapists and specialists dedicated to your well-being. Here are some of our professionals, but our full team is much larger and ready to support you throughout your recovery process.",
+    "cta": "Meet the full team",
+    "members": {
+      "first": {
+        "name": "Dr. Juan Pérez",
+        "role": "Sports Physiotherapist",
+        "description": "Specialist in the treatment and prevention of sports injuries."
+      },
+      "second": {
+        "name": "Dr. Carlos Rodríguez",
+        "role": "Manual Therapy Specialist",
+        "description": "Expert in manual therapy techniques to improve mobility and reduce pain."
+      },
+      "third": {
+        "name": "Dr. Sandra Martínez",
+        "role": "Post-Surgical Rehabilitation",
+        "description": "Focused on supporting patients through safe and effective recovery after surgery."
+      }
+    }
+  }
+}

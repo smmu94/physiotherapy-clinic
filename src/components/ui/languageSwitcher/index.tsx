@@ -23,7 +23,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="w-32">
+    <div className="w-26">
       <Select
         options={languageOptions}
         value={currentOption || null}

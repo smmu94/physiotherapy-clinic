@@ -2,8 +2,15 @@
     "navbar": {
         "home": "Inicio",
         "services": "Servicios",
-        "about": "Acerca de nosotros",
+        "about": "Nosotros",
         "contact": "Contacto",
-        "booking": "Reservar cita"
+        "blog": "Blog",
+        "booking": "Reservar"
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados.",
+        "privacy": "Política de Privacidad",
+        "cookies": "Política de Cookies",
+        "legal": "Aviso Legal"
     }
 }

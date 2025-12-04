@@ -4,6 +4,13 @@
         "services": "Services",
         "about": "About Us",
         "contact": "Contact",
-        "booking": "Book Appointment"
+        "blog": "Blog",
+        "booking": "Book Now"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookies Policy",
+        "legal": "Legal Notice"
     }
 }

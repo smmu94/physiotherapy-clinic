@@ -1,0 +1,49 @@
+{
+    "hero": {
+        "title": "Tu camino hacia la recuperación y el bienestar comienza aquí",
+        "description": "Clínica de fisioterapia profesional dedicada a tu salud y movimiento.",
+        "cta": "Reserva cita"
+    },
+    "aboutAndServices": {
+        "title": "Nuestra Clínica",
+        "description": "En ELON Physio, nuestra misión es ofrecerte un cuidado personalizado y efectivo, utilizando las técnicas más avanzadas para garantizar una recuperación rápida y duradera. Nos comprometemos con la excelencia y el bienestar de cada uno de nuestros pacientes.",
+        "serviceDescription":" Ofrecemos una amplia gama de servicios de fisioterapia adaptados a tus necesidades específicas. Nuestros servicios clave incluyen:",
+        "services": {
+            "first": {
+                "title": "Fisioterapia Deportiva",
+                "description": "Atención especializada en lesiones deportivas y preparación física."
+            },
+            "second": {
+                "title": "Terapia Manual",
+                "description": "Técnicas prácticas para aliviar el dolor, mejorar la movilidad y restaurar la función articular."
+            },
+            "third": {
+                "title": "Rehabilitación Postquirúrgica",
+                "description": "Programas personalizados para una recuperación segura y efectiva después de cirugías."
+            }
+        },
+        "cta": "Descubre todos nuestros servicios"
+    },
+    "team": {
+        "title": "Conoce a Nuestro Equipo",
+        "description": "En ELON Physio contamos con un equipo multidisciplinario de fisioterapeutas y especialistas comprometidos con tu bienestar. Aquí te presentamos a algunos de nuestros profesionales, pero nuestro equipo completo es aún más amplio y está listo para acompañarte en tu proceso de recuperación.",
+        "cta": "Conocer al equipo completo",
+        "members": {
+            "first": {
+                "name": "Dr. Juan Pérez",
+                "role": "Fisioterapeuta Deportivo",
+                "description": "Especializado en el tratamiento y prevención de lesiones deportivas."
+            },
+            "second": {
+                "name": "Dr. Carlos Rodríguez",
+                "role": "Especialista en Terapia Manual",
+                "description": "Experto en técnicas de terapia manual para mejorar la movilidad y reducir el dolor."
+            },
+            "third": {
+                "name": "Dra. Sandra Martínez",
+                "role": "Rehabilitación Postquirúrgica",
+                "description": "Dedicada a ayudar a los pacientes a recuperarse después de cirugías."
+            }
+        }
+    }
+}
