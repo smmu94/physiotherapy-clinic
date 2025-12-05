@@ -1,9 +1,9 @@
 import Navbar from "@/components/layout/navbar";
-import { useLocale } from "next-globe-gen";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import Footer from "@/components/layout/footer";
+import { auth } from "../../auth";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -29,16 +29,16 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
-  const locale = useLocale();
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const session = await auth();
   return (
-    <html lang={locale}>
+    <html>
       <body className={`${montserrat.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}>
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+          <Navbar session={session} />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
       </body>
     </html>
   );

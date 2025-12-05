@@ -20,6 +20,6 @@ export const navItems = [
   { href: routes.services, label: "navbar.services" },
   { href: routes.about, label: "navbar.about" },
   { href: routes.contact, label: "navbar.contact" },
-  { href: routes.blog, label: "navbar.blog" },
+  { href: routes.blog.list, label: "navbar.blog" },
   { href: routes.booking, label: "navbar.booking" },
 ] as const;

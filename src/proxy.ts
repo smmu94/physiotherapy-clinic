@@ -1,15 +1,13 @@
 import nextGlobeGenMiddleware from "next-globe-gen/middleware";
 import { NextRequest } from "next/server";
+import NextAuth from 'next-auth';
+import { authConfig } from "../auth.config";
 
-export function proxy(request: NextRequest) {
-  const response = nextGlobeGenMiddleware(request);
-  /**
-   * Other custom logic that possibly modify the response
-   */
-  return response;
-}
+export default NextAuth(authConfig).auth((request: NextRequest) => {
+    const globeGenResponse = nextGlobeGenMiddleware(request);
+    return globeGenResponse;
+});
 
 export const config = {
-  // Matcher ignoring next internals and static assets
   matcher: ["/((?!_next|.*\\.).*)"],
 };

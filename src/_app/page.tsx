@@ -1,12 +1,16 @@
+"use client";
+import Link from "next/link";
 import Button from "@/components/ui/button";
 import { HOME_KEY_SERVICES, HOME_KEY_TEAM_MEMBERS } from "@/lib/constants";
 import { routes } from "@/lib/routes";
-import { useTranslations } from "next-globe-gen";
+import { useLocale, useTranslations } from "next-globe-gen";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const t = useTranslations("home");
+  const locale = useLocale();
+  const router = useRouter();
 
   return (
     <>
@@ -19,7 +23,7 @@ export default function Home() {
           <p className="text-preset-3 text-white">
             {t("hero.description")}
           </p>
-          <Button style="primary" className="w-fit">{t("hero.cta")}</Button>
+          <Button style="primary" className="w-fit" onClick={() => router.push(`/${locale}${routes.booking}`)}>{t("hero.cta")}</Button>
         </div>
       </section>
       <section className="px-10 py-24 text-dark transition-all duration-700 ease-in-out flex justify-center">
@@ -46,7 +50,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Link
-              href={routes.services}
+              href={`/${locale}${routes.services}`}
               className="text-primary text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
               {t("aboutAndServices.cta")}
@@ -84,7 +88,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center mt-8">
             <Link
-              href={routes.about}
+              href={`/${locale}${routes.about}`}
               className="text-neutral-light text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
               {t("team.cta")}

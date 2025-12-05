@@ -1,0 +1,9 @@
+{
+    "title": "Admin Login",
+    "password": "Password",
+    "cta": "Log In",
+    "errors": {
+        "invalid_credentials": "Invalid username or password.",
+        "default": "An unexpected error occurred. Please try again later."
+    }
+}
