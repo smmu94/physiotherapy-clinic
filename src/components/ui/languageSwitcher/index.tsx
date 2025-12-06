@@ -17,13 +17,8 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = (option: Option | null) => {
     if (!option) return;
-    
-    // Remover el locale actual del pathname
     const pathnameWithoutLocale = pathname.replace(`/${activeLocale}`, '');
-    
-    // Crear la nueva ruta con el nuevo locale
     const newPath = `/${option.value}${pathnameWithoutLocale || ''}`;
-    
     router.push(newPath);
   };
 

@@ -4,9 +4,8 @@ import Button from "@/components/ui/button";
 import LanguageSwitcher from "@/components/ui/languageSwitcher";
 import { logout } from "@/lib/actions";
 import { routes } from "@/lib/routes";
-import { useLocale } from "next-globe-gen";
+import { Link, useLocale } from "next-globe-gen";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import NavLinks from "./nav-links";
@@ -23,7 +22,7 @@ export default function Navbar({ session }: NavbarProps) {
   return (
     <nav className="w-full border-b border-gray bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between px-4 py-4">
-        <Link href={`/${locale}${routes.home}`} className="text-preset-4-bold text-primary shrink-0">
+        <Link href={routes.home} className="text-preset-4-bold text-primary shrink-0">
           <Image src="/svgs/logo.svg" alt="Logo" width={200} height={50} />
         </Link>
         <div className="hidden lg:flex items-center gap-4 flex-1 justify-center">

@@ -1,20 +1,18 @@
-import { useTranslations, useLocale } from "next-globe-gen";
-import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { privacyItems } from "./constants";
-import { navItems } from "../navbar/constants";
 import { routes } from "@/lib/routes";
+import { Link, useTranslations } from "next-globe-gen";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { navItems } from "../navbar/constants";
+import { privacyItems } from "./constants";
 
 export default function Footer() {
   const t = useTranslations("common");
-  const locale = useLocale();
 
   return (
     <footer className="flex flex-col gap-6 text-preset-4 py-6 border-t border-gray px-6 md:px-10">
       <div className="flex flex-wrap justify-center gap-6 md:gap-16">
         {navItems.map((item) => (
           <Link
-            href={`/${locale}${item.href}`}
+            href={item.href}
             key={item.href}
             className="hover:text-primary transition-colors"
           >
@@ -25,7 +23,7 @@ export default function Footer() {
       <div className="flex flex-wrap justify-center gap-6">
         {privacyItems.map((item) => (
           <Link
-            href={`/${locale}${item.href}`}
+            href={item.href}
             key={item.href}
             className="hover:text-primary transition-colors"
           >
@@ -33,7 +31,7 @@ export default function Footer() {
           </Link>
         ))}
         <Link
-          href={`/${locale}${routes.login}`}
+          href={routes.login}
           className="text-neutral-medium hover:text-primary transition-colors"
         >
           Admin

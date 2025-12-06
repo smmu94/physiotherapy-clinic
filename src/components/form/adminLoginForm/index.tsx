@@ -66,7 +66,7 @@ export default function AdminLoginForm() {
           {t("cta")}
         </Button>
         {errorMessage && (
-          <p className="text-red-500">{t(errorMessage)}</p>
+          <p className="text-red-500">{t(errorMessage as keyof typeof t)}</p>
         )}
     </form>
   );

@@ -1,0 +1,12 @@
+{
+  "title_too_short": "The title must have at least 6 characters.",
+  "content_too_short": "The content must have at least 20 characters.",
+  "image_invalid_type_error": "Please upload a valid image (JPEG, PNG, WebP, or GIF).",
+  "image_invalid_type_message": "Invalid file type.",
+  "image_invalid_size_error": "The image must be smaller than 5MB.",
+  "image_invalid_size_message": "File too large.",
+  "image_upload_error": "An error occurred while uploading the image. Please try again.",
+  "image_upload_message": "Image upload error.",
+  "db_create_error": "Database error: The post could not be created.",
+  "validation_error": "Validation error: Invalid fields."
+}

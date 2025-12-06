@@ -15,7 +15,7 @@ export const authConfig = {
         path.includes(routes.blog.edit(''));
 
       if (isBlogAdminRoute && !isLoggedIn) {
-        return false;
+        return Response.redirect(new URL(routes.login, nextUrl));
       }
 
       if (path.includes(routes.login) && isLoggedIn) {

@@ -1,18 +1,16 @@
-import { useTranslations, useLocale } from "next-globe-gen";
-import Link from "next/link";
+import { Link, useTranslations } from "next-globe-gen";
 import { navItems } from "./constants";
 import { NavLinksProps } from "./types";
 
 export default function NavLinks({ onLinkClick, isMobile = false }: NavLinksProps) {
     const t = useTranslations("common");
-    const locale = useLocale();
     
     return (
     <>
       {navItems.map((link) => (
         <Link
           key={link.href}
-          href={`/${locale}${link.href}`}
+          href={link.href}
           onClick={onLinkClick}
           className={
             link.label === "navbar.booking"

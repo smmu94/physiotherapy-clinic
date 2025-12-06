@@ -1,9 +1,8 @@
 "use client";
-import Link from "next/link";
 import Button from "@/components/ui/button";
 import { HOME_KEY_SERVICES, HOME_KEY_TEAM_MEMBERS } from "@/lib/constants";
 import { routes } from "@/lib/routes";
-import { useLocale, useTranslations } from "next-globe-gen";
+import { Link, useLocale, useTranslations } from "next-globe-gen";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -49,8 +48,8 @@ export default function Home() {
             ))}
           </div>
           <div className="flex justify-center">
-            <Link
-              href={`/${locale}${routes.services}`}
+            <Link 
+              href={routes.services}
               className="text-primary text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
               {t("aboutAndServices.cta")}
@@ -88,7 +87,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center mt-8">
             <Link
-              href={`/${locale}${routes.about}`}
+              href={routes.about}
               className="text-neutral-light text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
               {t("team.cta")}

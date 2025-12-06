@@ -1,0 +1,16 @@
+{
+  "title": {
+    "label": "Title",
+    "placeholder": "Enter the post title"
+  },
+  "content": {
+    "label": "Content",
+    "placeholder": "Enter the post content"
+  },
+  "image": {
+    "label": "Image (Optional)",
+    "labelButton": "Select image",
+    "preview": "Preview"
+  },
+  "cta": "Create post"
+}
