@@ -5,7 +5,8 @@
         "about": "About Us",
         "contact": "Contact",
         "blog": "Blog",
-        "booking": "Book Now"
+        "booking": "Book Now",
+        "logout": "Logout"
     },
     "footer": {
         "rights": "All rights reserved.",

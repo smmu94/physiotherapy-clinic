@@ -15,24 +15,3 @@ export const routes = {
   legalNotice: "/legal-notice",
   login: "/admin-login",
 } as const;
-
-export const getLocaleFromHeaders = async () => {
-  try {
-    const { headers } = await import("next/headers");
-    const headersList = await headers();
-    
-    const referer = headersList.get("referer") || "";
-    
-    const match = referer.match(/\/([a-z]{2})(?:\/|$)/);
-    
-    if (match) {
-      const locale = match[1];
-      return locale;
-    }
-    
-    return "en";
-  } catch (error) {
-    console.error("Error getting locale:", error);
-    return "en";
-  }
-};

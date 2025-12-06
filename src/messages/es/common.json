@@ -5,7 +5,8 @@
         "about": "Nosotros",
         "contact": "Contacto",
         "blog": "Blog",
-        "booking": "Reservar"
+        "booking": "Reservar",
+        "logout": "Cerrar Sesión"
     },
     "footer": {
         "rights": "Todos los derechos reservados.",

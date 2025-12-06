@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import z from "zod";
 import cloudinary from "@/lib/cloudinary";
-import { getLocaleFromHeaders, routes } from "./routes";
+import { routes } from "./routes";
 import { signIn, signOut } from "../../auth";
 import { AuthError } from "next-auth";
 import { DEFAULT_POST_IMAGE } from "@/components/form/createPostForm/constants";
@@ -94,7 +94,7 @@ export async function createPost(prevState: State, formData: FormData) {
   }
 
   const { title, content } = validateFields.data;
-  const created_at = new Date().toISOString().split("T")[0];
+  const created_at = new Date().toISOString();
 
   try {
     await sql`
@@ -109,8 +109,7 @@ export async function createPost(prevState: State, formData: FormData) {
     };
   }
 
-  const locale = await getLocaleFromHeaders();
-  revalidatePath(`/${locale}${routes.blog.list}`);
+  revalidatePath(routes.blog.list);
   redirect(routes.blog.list);
 }
 

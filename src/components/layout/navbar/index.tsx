@@ -4,7 +4,7 @@ import Button from "@/components/ui/button";
 import LanguageSwitcher from "@/components/ui/languageSwitcher";
 import { logout } from "@/lib/actions";
 import { routes } from "@/lib/routes";
-import { Link, useLocale } from "next-globe-gen";
+import { Link, useLocale, useTranslations } from 'next-globe-gen';
 import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -14,7 +14,7 @@ import { NavbarProps } from "./types";
 export default function Navbar({ session }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const locale = useLocale();
-
+  const t = useTranslations("common");
   const handleLogout = () => {
     logout(`/${locale}${routes.login}`);
   };
@@ -31,7 +31,7 @@ export default function Navbar({ session }: NavbarProps) {
         <div className="flex items-center gap-4 shrink-0">
           <div className="hidden lg:flex items-center gap-4">
             {session?.user &&
-              <Button style="accent" onClick={handleLogout}>Log Out</Button>
+              <Button style="secondary" onClick={handleLogout}>{t("navbar.logout")}</Button>
             }
             <LanguageSwitcher />
           </div>
