@@ -119,7 +119,14 @@ export async function authenticate(
   formData: FormData
 ) {
   try {
-    await signIn("credentials", formData);
+    const redirectTo = formData.get("redirectTo") as string;
+    
+    await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirect: false,
+    });
+    redirect(redirectTo || routes.blog.list);
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
