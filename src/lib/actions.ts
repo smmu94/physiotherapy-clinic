@@ -126,6 +126,7 @@ export async function authenticate(
       password: formData.get("password"),
       redirect: false,
     });
+
     redirect(redirectTo || routes.blog.list);
   } catch (error) {
     if (error instanceof AuthError) {
@@ -139,7 +140,6 @@ export async function authenticate(
     throw error;
   }
 }
-
 // LOGOUT
 export async function logout(redirectTo: string) {
   await signOut({ redirectTo });
