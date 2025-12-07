@@ -18,7 +18,7 @@ export default function Navbar({ session }: NavbarProps) {
   const handleLogout = () => {
     logout(`/${locale}${routes.login}`);
   };
-
+  console.log({session})
   return (
     <nav className="w-full border-b border-gray bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between px-4 py-4">
