@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import z from "zod";
 import cloudinary from "@/lib/cloudinary";
 import { routes } from "./routes";
-import { signIn, signOut } from "../../auth";
+import { signIn } from "../../auth";
 import { AuthError } from "next-auth";
 import { DEFAULT_POST_IMAGE } from "@/components/form/createPostForm/constants";
 
@@ -126,6 +126,7 @@ export async function authenticate(
       password: formData.get("password"),
       redirect: false,
     });
+
     redirect(redirectTo || routes.blog.list);
   } catch (error) {
     if (error instanceof AuthError) {
@@ -138,9 +139,4 @@ export async function authenticate(
     }
     throw error;
   }
-}
-
-// LOGOUT
-export async function logout(redirectTo: string) {
-  await signOut({ redirectTo });
 }

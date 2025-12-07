@@ -3,8 +3,12 @@ import Credentials from "next-auth/providers/credentials";
 import { authConfig } from "./auth.config";
 import { z } from "zod";
 
-export const { auth, signIn, signOut } = NextAuth({
+export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
+  secret: process.env.AUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     Credentials({
       async authorize(credentials) {
@@ -26,6 +30,7 @@ export const { auth, signIn, signOut } = NextAuth({
           return {
             id: "admin",
             email: email,
+            name: "Admin",
           };
         }
 
