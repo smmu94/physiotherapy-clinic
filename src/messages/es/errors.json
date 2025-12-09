@@ -7,6 +7,10 @@
   "image_invalid_size_message": "Archivo muy pesado.",
   "image_upload_error": "Error al subir la imagen. Inténtalo de nuevo.",
   "image_upload_message": "Error en la subida de imagen.",
-  "db_create_error": "Error de base de datos: No se pudo crear el post.",
-  "validation_error": "Error de validación: Campos inválidos."
+  "db_create_post_error": "Error de base de datos: No se pudo crear el post.",
+  "validation_error": "Error de validación: Campos inválidos.",
+  "db_create_user_error:": "Error de base de datos: No se pudo crear el usuario.",
+  "name_too_short": "El nombre debe tener al menos 5 caracteres",
+  "invalid_email": "El correo electrónico no es válido",
+  "password_too_short": "La contraseña debe tener al menos 8 caracteres"
 }

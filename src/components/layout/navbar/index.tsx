@@ -1,28 +1,29 @@
 "use client";
 
-import Button from "@/components/ui/button";
-import LanguageSwitcher from "@/components/ui/languageSwitcher";
-import { logout } from "@/lib/actions";
 import { routes } from "@/lib/routes";
-import { Link, useLocale, useTranslations } from 'next-globe-gen';
+import { Link, useLocale, useTranslations } from "next-globe-gen";
 import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+
+import Select from "@/components/form/select";
+import Button from "@/components/ui/button";
+import LanguageSwitcher from "@/components/ui/languageSwitcher";
 import NavLinks from "./nav-links";
 import { NavbarProps } from "./types";
+import { getUserDropdownOptions } from "./utils";
 
 export default function Navbar({ session }: NavbarProps) {
-  const [open, setOpen] = useState(false);
   const locale = useLocale();
   const t = useTranslations("common");
-  const handleLogout = () => {
-    logout(`/${locale}${routes.login}`);
-  };
-  console.log({session})
+  const [open, setOpen] = useState(false);
+
+  const dropdownOptions = getUserDropdownOptions(session, t, locale);
+
   return (
     <nav className="w-full border-b border-gray bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between px-4 py-4">
-        <Link href={routes.home} className="text-preset-4-bold text-primary shrink-0">
+        <Link href={routes.home} className="shrink-0">
           <Image src="/svgs/logo.svg" alt="Logo" width={200} height={50} />
         </Link>
         <div className="hidden lg:flex items-center gap-4 flex-1 justify-center">
@@ -30,16 +31,21 @@ export default function Navbar({ session }: NavbarProps) {
         </div>
         <div className="flex items-center gap-4 shrink-0">
           <div className="hidden lg:flex items-center gap-4">
-            {session?.user &&
-              <Button style="secondary" onClick={handleLogout}>{t("navbar.logout")}</Button>
-            }
+            {session?.user ? (
+              <Select
+                options={dropdownOptions}
+                placeholder={session.user.name || "Usuario"}
+                isSearchable={false}
+                onChange={(option) => option?.onClick?.()}
+              />
+            ) : (
+              <Link href={routes.login}>
+                <Button style="ghost">Admin</Button>
+              </Link>
+            )}
             <LanguageSwitcher />
           </div>
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden cursor-pointer"
-            aria-label="Toggle Menu"
-          >
+          <button onClick={() => setOpen(!open)} className="lg:hidden cursor-pointer">
             <RxHamburgerMenu className="text-preset-3" />
           </button>
         </div>
@@ -47,11 +53,30 @@ export default function Navbar({ session }: NavbarProps) {
       {open && (
         <div className="flex flex-col gap-4 border-t border-gray px-4 py-4 lg:hidden">
           <NavLinks onLinkClick={() => setOpen(false)} isMobile />
-          <div className="border-t border-gray pt-4 flex justify-between">
+          <div className="flex flex-wrap justify-center gap-4">
+            {session?.user ? (
+              <>
+                {dropdownOptions.map((opt) => (
+                  <Button
+                    key={opt.value}
+                    style="accent"
+                    onClick={() => {
+                      opt.onClick?.();
+                      setOpen(false);
+                    }}
+                  >
+                    {opt.icon} {opt.label}
+                  </Button>
+                ))}
+              </>
+              ) : (
+              <Link href={routes.login} onClick={() => setOpen(false)}>
+                <Button style="ghost" className="w-full">
+                  Admin
+                </Button>
+              </Link>
+            )}
             <LanguageSwitcher />
-            {session?.user &&
-              <Button style="accent" onClick={handleLogout}>Log Out</Button>
-            }
           </div>
         </div>
       )}

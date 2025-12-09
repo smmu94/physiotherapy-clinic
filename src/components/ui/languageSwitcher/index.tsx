@@ -1,10 +1,10 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
 import Select from "@/components/form/select";
 import type { Option } from "@/components/form/select/types";
-import { languageOptions } from "@/components/layout/navbar/constants";
+import { languageOptions } from "@/components/layout/navbar/utils";
 import { useLocale } from "next-globe-gen";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function LanguageSwitcher() {
   const activeLocale = useLocale();

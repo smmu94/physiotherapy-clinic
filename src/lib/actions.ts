@@ -3,38 +3,17 @@
 import sql from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import z from "zod";
 import cloudinary from "@/lib/cloudinary";
 import { routes } from "./routes";
 import { signIn, signOut } from "../../auth";
 import { AuthError } from "next-auth";
 import { DEFAULT_POST_IMAGE } from "@/components/form/createPostForm/constants";
-
-const FormSchema = z.object({
-  id: z.string(),
-  title: z.string().min(6, "title_too_short"),
-  content: z.string().min(20, "content_too_short"),
-  image_url: z.string(),
-  created_at: z.string(),
-  updated_at: z.string(),
-});
-
-const CreatePostSchema = FormSchema.omit({
-  id: true,
-  created_at: true,
-  updated_at: true,
-});
+import bcrypt from "bcryptjs";
+import { CreatePostSchema, UserFormSchema } from "./schemas";
+import { CreateUserState, PostState } from "./types";
 
 
-export type State = {
-  errors?: {
-    title?: string[];
-    content?: string[];
-    image_url?: string[];
-  };
-  message?: string | null;
-};
-export async function createPost(prevState: State, formData: FormData) {
+export async function createPost(prevState: PostState, formData: FormData, userId: string, userName: string) {
   let imageUrl: string = DEFAULT_POST_IMAGE;
   const imageFile = formData.get("image") as File | null;
 
@@ -88,7 +67,7 @@ export async function createPost(prevState: State, formData: FormData) {
 
   if (!validateFields.success) {
     return {
-      errors: validateFields.error.flatten().fieldErrors as State["errors"],
+      errors: validateFields.error.flatten().fieldErrors as PostState["errors"],
       message: "validation_error",
     };
   }
@@ -98,19 +77,56 @@ export async function createPost(prevState: State, formData: FormData) {
 
   try {
     await sql`
-      INSERT INTO posts (title, content, image_url, created_at)
-      VALUES (${title}, ${content}, ${imageUrl}, ${created_at})
+      INSERT INTO posts (title, content, image_url, created_at, author_id, author_name)
+      VALUES (${title}, ${content}, ${imageUrl}, ${created_at}, ${userId}, ${userName})
     `;
   } catch (error) {
     console.error("Database error:", error);
     return {
       errors: {},
-      message: "db_create_error",
+      message: "db_create_post_error",
     };
   }
 
   revalidatePath(routes.blog.list);
   redirect(routes.blog.list);
+}
+
+export async function createUser(
+  prevState: CreateUserState,
+  formData: FormData
+): Promise<CreateUserState> {
+  const parsed = UserFormSchema.safeParse({
+    name: formData.get("name"),
+    email: formData.get("email"),
+    password: formData.get("password"),
+    is_admin: formData.get("is_admin"),
+  });
+
+  if (!parsed.success) {
+    return {
+      errors: parsed.error.flatten().fieldErrors,
+      message: "validation_error",
+    };
+  }
+
+  const { name, email, password, is_admin } = parsed.data;
+
+  try {
+    const password_hash = await bcrypt.hash(password, 10);
+
+    await sql`
+      INSERT INTO users (name, email, password_hash, is_admin)
+      VALUES (${name}, ${email}, ${password_hash}, ${is_admin === "true"})
+    `;
+
+    revalidatePath(routes.users);
+
+    return { message: "user_created" };
+  } catch (error) {
+    console.error("DB error:", error);
+    return { message: "db_create_user_error" };
+  }
 }
 
 // AUTHENTICATION

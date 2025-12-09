@@ -4,6 +4,7 @@ export type Option = {
     icon?: ReactNode;
     value: string | number;
     label: string;
+    onClick?: () => void;
 }
 
 export type SelectProps = {

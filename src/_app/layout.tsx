@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import Footer from "@/components/layout/footer";
 import { auth } from "../../auth";
-import { SessionProvider } from "next-auth/react";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
   title: "ELON Physio",
   description: "Physiotherapy Clinic",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.ico",
   },
 };
 
@@ -35,13 +34,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html>
       <body className={`${montserrat.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}>
-        <SessionProvider session={session}>
-          <Navbar session={session} />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </SessionProvider>
+        <Navbar session={session} />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { routes } from "@/lib/routes";
 import { Link, useTranslations } from "next-globe-gen";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { navItems } from "../navbar/constants";
+import { navItems } from "../navbar/utils";
 import { privacyItems } from "./constants";
 
 export default function Footer() {

@@ -6,6 +6,8 @@
         "contact": "Contacto",
         "blog": "Blog",
         "booking": "Reservar",
+        "createPost": "Crear Post",
+        "adminUsers": "Admin Usuarios",
         "logout": "Cerrar Sesión"
     },
     "footer": {

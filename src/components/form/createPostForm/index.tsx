@@ -1,15 +1,21 @@
 "use client";
 
 import Button from "@/components/ui/button";
-import { createPost, State } from "@/lib/actions";
+import { createPost } from "@/lib/actions";
 import Image from "next/image";
 import { useActionState, useState } from "react";
 import { DEFAULT_POST_IMAGE } from "./constants";
 import { useTranslations } from "next-globe-gen";
+import { PostState } from "@/lib/types";
 
-export default function CreatePostForm() {
-  const initialState: State = { message: null, errors: {} };
-  const [state, formAction] = useActionState(createPost, initialState);
+export default function CreatePostForm({ user }: {user: {
+  id: string;
+  name: string;
+}}) {
+  const initialState: PostState = { message: null, errors: {} };
+  const wrappedCreatePost = (prevState: PostState, formData: FormData) =>
+    createPost(prevState, formData, user.id, user.name);
+  const [state, formAction] = useActionState(wrappedCreatePost, initialState);
   const [preview, setPreview] = useState<string>(DEFAULT_POST_IMAGE);
 
   const t = useTranslations("blog-create");
@@ -102,7 +108,11 @@ export default function CreatePostForm() {
           <div className="flex flex-col gap-2">
             <p className="text-preset-5-bold text-dark mb-2">{t("image.preview")}</p>
             <div className="relative w-full h-80 rounded-md overflow-hidden bg-neutral-light">
-              <Image src={preview} alt="Preview" fill className="object-contain p-4" />
+              <Image 
+                src={preview} 
+                alt="Preview" 
+                fill 
+                className="object-contain p-4" />
             </div>
           </div>
         </div>

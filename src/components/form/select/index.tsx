@@ -27,7 +27,7 @@ const customStyles: StylesConfig<Option, false> = {
   option: (base, state) => ({
     ...base,
     backgroundColor: state.isSelected ? "#429993" : state.isFocused ? "#f3f4f6" : "#ffffff",
-    color: state.isSelected ? "#ffffff" : "#171e1f",
+    color: state.isSelected ? "#ffffff" : "#26484A",
     cursor: "pointer",
     padding: "0.75rem 1rem",
     fontFamily: "var(--font-poppins)",

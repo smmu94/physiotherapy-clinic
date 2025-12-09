@@ -40,3 +40,6 @@ export const HOME_KEY_TEAM_MEMBERS = [
         description: "team.members.third.description"
     }
 ] as const;
+
+export const POSTS_PER_PAGE = 6;
+

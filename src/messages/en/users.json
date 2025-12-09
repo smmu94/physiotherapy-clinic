@@ -1,0 +1,23 @@
+{
+  "title": "Authorized Users",
+  "table": {
+    "empty": "No users registered.",
+    "header": {
+      "name": "Name",
+      "email": "Email",
+      "admin": "Admin"
+    }
+  },
+  "form": {
+    "title": "Create User",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "role": {
+        "role": "Role",
+      "admin": "Admin",
+      "user": "User"
+    },
+    "cta": "Create User"
+  }
+}

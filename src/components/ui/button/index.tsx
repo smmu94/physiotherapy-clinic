@@ -20,7 +20,7 @@ export default function Button({
       "btn-disabled": isDisabled,
       "w-full": fullWidth
     },
-    "flex items-center justify-center gap-2",
+    "flex items-center justify-center gap-2 text-preset-4",
     "outline-none focus:outline-none",
     className
   );
