@@ -1,6 +1,6 @@
 import { Link, useTranslations } from "next-globe-gen";
-import { navItems } from "./constants";
 import { NavLinksProps } from "./types";
+import { navItems } from "./utils";
 
 export default function NavLinks({ onLinkClick, isMobile = false }: NavLinksProps) {
     const t = useTranslations("common");

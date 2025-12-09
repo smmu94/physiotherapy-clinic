@@ -8,5 +8,9 @@
   "image_upload_error": "An error occurred while uploading the image. Please try again.",
   "image_upload_message": "Image upload error.",
   "db_create_error": "Database error: The post could not be created.",
-  "validation_error": "Validation error: Invalid fields."
+  "validation_error": "Validation error: Invalid fields.",
+  "db_create_user_error": "Database error: The user could not be created.",
+  "name_too_short": "The name must have at least 5 characters.",
+  "invalid_email": "Invalid email.",
+  "password_too_short": "The password must have at least 8 characters."
 }

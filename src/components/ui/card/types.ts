@@ -7,4 +7,5 @@ export type CardProps = {
     image: string;
     children: ReactNode;
     isPost?: boolean;
+    href?: string;
 }

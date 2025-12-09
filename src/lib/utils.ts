@@ -7,3 +7,4 @@ export function formatDate(date: string | Date, locale: string) {
     year: "numeric",
   }).format(d);
 }
+
