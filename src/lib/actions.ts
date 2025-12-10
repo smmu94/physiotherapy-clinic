@@ -138,13 +138,11 @@ export async function authenticate(
     const redirectTo = formData.get("redirectTo") as string;
     const locale = formData.get("locale") as string || "es";
     
-    const result= await signIn("credentials", {
+    await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
-
-    console.log('SignIn result:', result);
 
     const finalRedirect = redirectTo || routes.blog.list;
     redirect(`/${locale}${finalRedirect}`);

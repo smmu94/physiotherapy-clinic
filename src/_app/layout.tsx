@@ -31,6 +31,7 @@ interface RootLayoutProps {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const session = await auth();
+
   return (
     <html>
       <body className={`${montserrat.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}>
