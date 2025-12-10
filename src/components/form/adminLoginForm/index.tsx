@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/button";
-import { useTranslations } from "next-globe-gen";
+import { useLocale, useTranslations } from "next-globe-gen";
 import Image from "next/image";
 import { useActionState } from "react";
 import { authenticate } from "../../../lib/actions";
@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 import { routes } from "@/lib/routes";
  
 export default function AdminLoginForm() {
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || routes.blog.list;
   const [errorMessage, formAction, isPending] = useActionState(
@@ -61,6 +62,7 @@ export default function AdminLoginForm() {
             />
           </div>
         </div>
+        <input type="hidden" name="locale" value={locale} />
         <input type="hidden" name="redirectTo" value={callbackUrl} />
         <Button className="w-full" aria-disabled={isPending} type="submit">
           {t("cta")}

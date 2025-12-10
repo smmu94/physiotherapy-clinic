@@ -30,7 +30,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
         const isValidPassword = await bcrypt.compare(password, user.password_hash);
         if (!isValidPassword) return null;
-
+        console.log('AUTHORIZE - Returning user with is_admin:', user.is_admin);
         return {
           id: String(user.id),
           email: user.email,
@@ -40,21 +40,23 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
       },
     })
   ],
-
-callbacks: {
+  callbacks: {
+    ...authConfig.callbacks,
     async jwt({ token, user }) {
-    if (user) {
-      token.id = user.id;
-      token.is_admin = user.is_admin;
-    }
-    return token;
-  },
+      if (user) {
+        token.id = user.id;
+        token.is_admin = user.is_admin;
+        console.log('JWT - Token after update:', token);
+      }
+      return token;
+    },
     async session({ session, token }) {
-    if (session.user) {
-      session.user.id = token.id as string;
-      session.user.is_admin = token.is_admin as boolean;
-    }
-    return session;
+      if (token && session.user) {
+        session.user.id = token.id as string;
+        session.user.is_admin = token.is_admin as boolean;
+        console.log('SESSION - Session after update:', session.user);
+      }
+      return session;
+    },
   },
-},
 });
