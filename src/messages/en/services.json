@@ -1,0 +1,127 @@
+{
+  "title": "Our Services",
+  "subtitle": "Discover how our specialized therapies can help you achieve your health and wellness goals.",
+  "services": [
+    {
+      "title": "Osteopathy",
+      "shortDescription": "Comprehensive treatment aimed at restoring the body's balance through manual techniques.",
+      "description": "Osteopathy is a manual therapeutic approach that understands the body as a functional unit where muscles, joints, and internal systems are interconnected. Its goal is to improve mobility, relieve pain, and enhance the body's self-healing ability. Treatment includes a global evaluation of the patient and the application of specific techniques to restore structural balance.",
+      "benefits": [
+        "Pain relief and improved joint mobility",
+        "Improved blood and lymphatic circulation",
+        "Reduction of stress and muscle tension",
+        "Improved digestive and respiratory function",
+        "Increased flexibility and muscle strength"
+      ],
+      "techniques": [
+        "Joint manipulations",
+        "Mobilization and stretching techniques",
+        "Craniosacral therapy",
+        "Myofascial release",
+        "Visceral therapy"
+      ]
+    },
+    {
+      "title": "Sports Physiotherapy",
+      "shortDescription": "Prevention and recovery from injuries in athletes of all levels.",
+      "description": "Sports physiotherapy focuses on the evaluation, prevention, and treatment of injuries caused by physical activity. It is aimed at both professional and amateur athletes who want to recover quickly, improve performance, or avoid relapses. Treatment combines manual techniques, therapeutic exercise, and functional readaptation to return the patient to optimal performance.",
+      "benefits": [
+        "Faster recovery times",
+        "Reduction of inflammation and pain",
+        "Prevention of recurrent injuries",
+        "Improved strength, stability, and coordination",
+        "Optimization of physical and sports performance"
+      ],
+      "techniques": [
+        "Personalized therapeutic exercise",
+        "Sports readaptation",
+        "Manual therapy and massage",
+        "Functional taping and kinesiotaping",
+        "Electrotherapy and thermotherapy"
+      ]
+    },
+    {
+      "title": "Manual Therapy",
+      "shortDescription": "Manual techniques applied to muscles and joints to relieve pain and improve mobility.",
+      "description": "Manual therapy encompasses a variety of techniques applied directly to body tissues to treat muscular and joint dysfunctions. It is highly effective in addressing chronic pain, muscle stiffness, mobility limitations, and stress-related tension from poor posture.",
+      "benefits": [
+        "Reduction of muscular and joint pain",
+        "Improvement of mobility and flexibility",
+        "Decrease of accumulated tension",
+        "Correction of muscular imbalances",
+        "Overall physical well-being improvement"
+      ],
+      "techniques": [
+        "Massage therapy",
+        "Joint mobilization",
+        "High-velocity manipulations",
+        "Deep myofascial release",
+        "Assisted therapeutic stretching"
+      ]
+    },
+    {
+      "title": "Dry Needling",
+      "shortDescription": "Minimally invasive technique to treat myofascial trigger points and muscle pain.",
+      "description": "Dry needling is an invasive technique that uses fine needles to deactivate trigger points responsible for myofascial pain. It is especially effective for deep contractures, chronic pain, overloads, and functional limitations. Its action produces immediate muscle relaxation.",
+      "benefits": [
+        "Elimination of muscular trigger points",
+        "Reduction of local and referred pain",
+        "Decrease of deep contractures",
+        "Immediate improvement of mobility",
+        "Acceleration of functional recovery"
+      ],
+      "techniques": [
+        "Superficial needling",
+        "Guided deep needling",
+        "Needle myofascial release",
+        "Tense band needling",
+        "Direct and indirect techniques"
+      ]
+    },
+    {
+      "title": "Postural Rehabilitation",
+      "shortDescription": "Correction of postural imbalances to relieve chronic tension and prevent injuries.",
+      "description": "Postural rehabilitation is based on the evaluation and correction of biomechanical alterations affecting body posture. It is ideal for people suffering from chronic pain due to poor posture, sedentary jobs, or muscular compensations. Includes specific exercises aimed at strengthening, stretching, and re-educating the body.",
+      "benefits": [
+        "Correction of poor posture",
+        "Reduction of chronic pain",
+        "Prevention of future injuries",
+        "Improved body alignment",
+        "Increased balance and stability"
+      ],
+      "techniques": [
+        "Postural re-education exercises",
+        "Global stretching",
+        "Muscle chain methods",
+        "Proprioceptive training",
+        "Breathing training"
+      ]
+    },
+    {
+      "title": "Therapeutic Massage",
+      "shortDescription": "Manipulation of soft tissues to reduce stress and improve circulation.",
+      "description": "Therapeutic massage uses various techniques of pressure, stretching, and manipulation of soft tissues to relieve muscle tension, improve circulation, and reduce stress. It is effective for both people with physical discomfort and those seeking relaxation and general well-being.",
+      "benefits": [
+        "Reduction of stress and anxiety",
+        "Improvement of blood circulation",
+        "Decrease of stiffness and contractures",
+        "Supports physical recovery",
+        "Increase in mobility and flexibility"
+      ],
+      "techniques": [
+        "Deep massage",
+        "Decontracting massage",
+        "Manual lymphatic drainage",
+        "Pressures and kneading",
+        "Myofascial release"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to start your path to recovery?",
+    "description": "Contact us and schedule a consultation today.",
+    "button": "Book Appointment"
+  },
+  "techniques": "Techniques",
+  "benefits": "Benefits"
+}

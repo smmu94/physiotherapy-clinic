@@ -1,0 +1,70 @@
+{
+  "title": "About Our Clinic",
+  "description": "Welcome to PhysioClinic, where your well-being is our priority. We believe in a comprehensive approach to health, combining the science of physiotherapy with the warmth of human care to help you live without pain and in full movement.",
+  "mission": {
+    "title": "Our Mission",
+    "description": "Our mission is to provide high-quality, personalized physiotherapy care to our patients, helping them reach their full potential for movement and well-being. We strive to create a supportive and understanding environment where every patient feels heard and valued."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "Our vision is to be the leading physiotherapy clinic in the region, recognized for our excellence in injury treatment and prevention, as well as for our human and personalized approach to patient care."
+  },
+  "history": {
+    "title": "Our History",
+    "beginning": {
+      "title": "The Beginning",
+      "description": "Founded by Dr. Elena Vargas in a small office, with the idea of offering a more human and empathetic approach to patients. Since then, we have grown and evolved, always with the goal of improving our patients’ quality of life."
+    },
+    "growth": {
+      "title": "Growth and Development",
+      "description": "Over the years, we have expanded our service offerings and our network of professionals, always with the aim of providing the highest quality care. Our team of physiotherapists and specialists is highly qualified and committed to patient well-being."
+    },
+    "now": {
+      "title": "Today",
+      "subtitle": "Leaders in Innovation",
+      "description": "Today, we are a nationally recognized physiotherapy clinic with extensive experience in injury treatment and prevention. Our innovative approach and commitment to quality have positioned us as leaders in the physiotherapy industry."
+    }
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "description": "At ELON Physio, we have a multidisciplinary team of physiotherapists and specialists committed to your well-being. Here we introduce you to some of our professionals, but our full team is even larger and ready to support you throughout your recovery process.",
+    "cta": {
+      "allTeam": "Meet the Full Team",
+      "title": "Ready to Begin Your Path to Recovery?",
+      "description": "Our team is prepared to listen and design the perfect plan for you. Don't let pain wait.",
+      "booking": "Book an Appointment"
+    },
+    "members": {
+      "first": {
+        "name": "Dr. Juan Pérez",
+        "role": "Sports Physiotherapist",
+        "description": "Specialized in the treatment and prevention of sports-related injuries."
+      },
+      "second": {
+        "name": "Dr. Carlos Rodríguez",
+        "role": "Manual Therapy Specialist",
+        "description": "Expert in manual therapy techniques to improve mobility and reduce pain."
+      },
+      "third": {
+        "name": "Dr. Sandra Martínez",
+        "role": "Post-Surgical Rehabilitation",
+        "description": "Dedicated to helping patients recover after surgical procedures."
+      },
+      "fourth": {
+        "name": "Dr. Miguel Torres",
+        "role": "Neurological Physiotherapy Specialist",
+        "description": "Focused on the rehabilitation of patients with complex neurological conditions."
+      },
+      "fifth": {
+        "name": "Dr. Laura Gómez",
+        "role": "Pelvic Floor Physiotherapist",
+        "description": "Helps improve quality of life through specialized pelvic health treatments."
+      },
+      "sixth": {
+        "name": "Dr. Andrés Castillo",
+        "role": "Functional Rehabilitation Specialist",
+        "description": "Focused on restoring function and movement through personalized rehabilitation programs."
+      }
+    }
+  }
+}

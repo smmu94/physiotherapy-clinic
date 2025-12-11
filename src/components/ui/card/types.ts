@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type CardProps = {
-    date: string;
+    date?: string;
     title: string;
     content: string;
     image: string;

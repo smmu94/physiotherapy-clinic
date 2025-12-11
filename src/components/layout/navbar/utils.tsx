@@ -22,7 +22,7 @@ export const languageOptions: Option[] = [
 
 export const navItems = [
   { href: routes.home, label: "navbar.home" },
-  { href: routes.services, label: "navbar.services" },
+  { href: routes.services.list, label: "navbar.services" },
   { href: routes.about, label: "navbar.about" },
   { href: routes.contact, label: "navbar.contact" },
   { href: routes.blog.list, label: "navbar.blog" },

@@ -1,0 +1,12 @@
+{   
+    "title": "Book an appointment",
+    "services": {
+        "osteopathy": "Osteopathy",
+        "sports_physiotherapy": "Sports Physiotherapy",
+        "manual_therapy": "Manual Therapy",
+        "dry_needling": "Dry Needling",
+        "postural_rehabilitation": "Postural Rehabilitation",
+        "therapeutic_massage": "Therapeutic Massage",
+        "initial_evaluation": "Initial Evaluation"
+    }
+}

@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const t = useTranslations("home");
+  const tAbout = useTranslations("about");
   const locale = useLocale();
   const router = useRouter();
 
@@ -49,7 +50,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Link 
-              href={routes.services}
+              href={routes.services.list}
               className="text-primary text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
               {t("aboutAndServices.cta")}
@@ -59,8 +60,8 @@ export default function Home() {
       </section>
       <section className="px-10 py-24 bg-dark text-white transition-all duration-700 ease-in-out flex justify-center">
         <div className="max-w-5xl mx-auto flex flex-col gap-10">
-          <h2 className="text-center text-preset-2 font-semibold">{t("team.title")}</h2>
-          <p className="text-center text-preset-4 text-neutral-light">{t("team.description")}</p>
+          <h2 className="text-center text-preset-2 font-semibold">{tAbout("team.title")}</h2>
+          <p className="text-center text-preset-4 text-neutral-light">{tAbout("team.description")}</p>
           <div className="flex flex-wrap gap-8 justify-center">
             {HOME_KEY_TEAM_MEMBERS.map(({ image, name, role, description }, index) => (
               <div
@@ -74,14 +75,14 @@ export default function Home() {
               >
                 <Image
                   src={image}
-                  alt={t(name)}
-                  className="h-40 w-40 rounded-full border-4 border-accent object-cover"
+                  alt={tAbout(name)}
+                  className="h-40 w-40 rounded-full border-4 border-accentAbout objectAbout-cover"
                   width={160}
                   height={160}
                 />
-                <h3 className="text-preset-4-bold">{t(name)}</h3>
-                <p className="text-preset-5-bold text-primary">{t(role)}</p>
-                <p className="text-preset-5 text-neutral-dark">{t(description)}</p>
+                <h3 className="text-preset-4-bold">{tAbout(name)}</h3>
+                <p className="text-preset-5-bold text-primary">{tAbout(role)}</p>
+                <p className="text-preset-5 text-neutral-dark">{tAbout(description)}</p>
               </div>
             ))}
           </div>
@@ -90,7 +91,7 @@ export default function Home() {
               href={routes.about}
               className="text-neutral-light text-preset-4 font-semibold underline underline-offset-4 hover:text-accent transition-colors"
             >
-              {t("team.cta")}
+              {tAbout("team.cta.allTeam")}
             </Link>
           </div>
         </div>

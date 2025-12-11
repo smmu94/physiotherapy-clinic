@@ -1,7 +1,10 @@
 export const routes = {
   home: "/",
   about: "/about",
-  services: "/services",
+  services: {
+    list: "/services",
+    detail: (id: string) => `/services/${id}`,
+  },
   contact: "/contact",
   blog: {
     list: "/blog",

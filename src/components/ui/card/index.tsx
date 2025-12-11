@@ -9,12 +9,12 @@ export default function Card({
   image,
   title,
   content,
-  date,
+  date = undefined,
   isPost = false,
   children,
 }: CardProps) {
   const locale = useLocale();
-  const formattedDate = formatDate(date, locale);
+  const formattedDate = date ? formatDate(date, locale) : undefined;
 
   return (
     <div 

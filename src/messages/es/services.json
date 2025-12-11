@@ -1,0 +1,127 @@
+{
+  "title": "Nuestros Servicios",
+  "subtitle": "Descubra cómo nuestras terapias especializadas pueden ayudarle a alcanzar sus objetivos de salud y bienestar.",
+  "services": [
+    {
+      "title": "Osteopatía",
+      "shortDescription": "Tratamiento integral que busca restaurar el equilibrio del cuerpo mediante técnicas manuales.",
+      "description": "La osteopatía es un enfoque terapéutico manual que entiende el cuerpo como una unidad funcional donde músculos, articulaciones y sistemas internos se relacionan entre sí. Su objetivo es mejorar la movilidad, aliviar el dolor y potenciar la capacidad de autocuración del organismo. El tratamiento incluye la evaluación global del paciente y la aplicación de técnicas específicas para restaurar el equilibrio estructural.",
+      "benefits": [
+        "Alivio del dolor y mejora de la movilidad articular",
+        "Mejora de la circulación sanguínea y linfática",
+        "Reducción del estrés y la tensión muscular",
+        "Mejora de la función digestiva y respiratoria",
+        "Aumento de la flexibilidad y la fuerza muscular"
+      ],
+      "techniques": [
+        "Manipulaciones articulares",
+        "Técnicas de movilización y estiramiento",
+        "Terapia craneosacral",
+        "Liberación miofascial",
+        "Terapia visceral"
+      ]
+    },
+    {
+      "title": "Fisioterapia Deportiva",
+      "shortDescription": "Prevención y recuperación de lesiones en deportistas de todos los niveles.",
+      "description": "La fisioterapia deportiva se enfoca en la evaluación, prevención y tratamiento de lesiones producidas por la actividad física. Está orientada tanto a deportistas profesionales como aficionados que desean recuperarse rápidamente, mejorar su rendimiento o evitar recaídas. El tratamiento combina técnicas manuales, ejercicio terapéutico y readaptación funcional para devolver al paciente a su nivel óptimo.",
+      "benefits": [
+        "Aceleración de los tiempos de recuperación",
+        "Reducción de la inflamación y el dolor",
+        "Prevención de lesiones recurrentes",
+        "Mejora de la fuerza, estabilidad y coordinación",
+        "Optimización del rendimiento físico y deportivo"
+      ],
+      "techniques": [
+        "Ejercicio terapéutico personalizado",
+        "Readaptación físico-deportiva",
+        "Terapia manual y masoterapia",
+        "Vendaje funcional y kinesiotaping",
+        "Electroterapia y termoterapia"
+      ]
+    },
+    {
+      "title": "Terapia Manual",
+      "shortDescription": "Técnicas manuales aplicadas a músculos y articulaciones para aliviar el dolor y mejorar la movilidad.",
+      "description": "La terapia manual comprende una variedad de técnicas aplicadas directamente sobre los tejidos corporales para tratar disfunciones musculares y articulares. Es una de las herramientas más efectivas para abordar el dolor crónico, la rigidez muscular, la limitación de movilidad y tensiones acumuladas por el estrés o malas posturas.",
+      "benefits": [
+        "Reducción del dolor muscular y articular",
+        "Mejora de la movilidad y flexibilidad",
+        "Disminución de la tensión acumulada",
+        "Corrección de desbalances musculares",
+        "Mejora del bienestar físico general"
+      ],
+      "techniques": [
+        "Masoterapia",
+        "Movilización articular",
+        "Manipulaciones de alta velocidad",
+        "Liberación miofascial profunda",
+        "Estiramientos terapéuticos asistidos"
+      ]
+    },
+    {
+      "title": "Punción Seca",
+      "shortDescription": "Técnica mínimamente invasiva para tratar puntos gatillo miofasciales y dolor muscular.",
+      "description": "La punción seca es una técnica invasiva que utiliza agujas finas para desactivar puntos gatillo responsables del dolor miofascial. Es especialmente efectiva en contracturas profundas, dolores crónicos, sobrecargas y limitación funcional. Su acción produce una relajación inmediata del músculo afectado.",
+      "benefits": [
+        "Eliminación de puntos gatillo musculares",
+        "Reducción del dolor local y referido",
+        "Disminución de contracturas profundas",
+        "Mejora inmediata de la movilidad",
+        "Aceleración de la recuperación funcional"
+      ],
+      "techniques": [
+        "Punción superficial",
+        "Punción profunda guiada",
+        "Liberación miofascial con aguja",
+        "Punción de bandas tensas",
+        "Técnica directa e indirecta"
+      ]
+    },
+    {
+      "title": "Rehabilitación Postural",
+      "shortDescription": "Corrección de desequilibrios posturales para aliviar tensiones crónicas y prevenir lesiones.",
+      "description": "La rehabilitación postural se basa en la evaluación y corrección de alteraciones biomecánicas que afectan la postura corporal. Es ideal para personas que sufren dolores crónicos derivados de malas posturas, trabajos sedentarios o compensaciones musculares. Incluye ejercicios específicos orientados a fortalecer, estirar y reeducar el cuerpo.",
+      "benefits": [
+        "Corrección de malas posturas",
+        "Reducción del dolor crónico",
+        "Prevención de futuras lesiones",
+        "Mejora de la alineación corporal",
+        "Incremento del equilibrio y estabilidad"
+      ],
+      "techniques": [
+        "Ejercicios de reeducación postural",
+        "Estiramientos globales",
+        "Métodos de cadenas musculares",
+        "Trabajo propioceptivo",
+        "Entrenamiento respiratorio"
+      ]
+    },
+    {
+      "title": "Masaje Terapéutico",
+      "shortDescription": "Manipulación de tejidos blandos para reducir el estrés y mejorar la circulación.",
+      "description": "El masaje terapéutico utiliza diversas técnicas de presión, estiramiento y manipulación de tejidos blandos para aliviar tensiones musculares, mejorar la circulación y reducir el estrés. Es una herramienta eficaz tanto para personas con molestias físicas como para quienes buscan relajación y bienestar general.",
+      "benefits": [
+        "Reducción del estrés y la ansiedad",
+        "Mejora de la circulación sanguínea",
+        "Disminución de rigidez y contracturas",
+        "Favorece la recuperación física",
+        "Incremento de la movilidad y flexibilidad"
+      ],
+      "techniques": [
+        "Masaje profundo",
+        "Masaje descontracturante",
+        "Drenaje linfático manual",
+        "Presiones y amasamientos",
+        "Liberación miofascial"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "¿Listo para comenzar tu camino hacia la recuperación?",
+    "description": "Contáctanos y programa una consulta hoy mismo.",
+    "button": "Reservar Cita"
+  },
+  "techniques": "Técnicas",
+  "benefits": "Beneficios"
+}

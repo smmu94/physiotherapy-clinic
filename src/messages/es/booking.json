@@ -1,0 +1,12 @@
+{   
+    "title": "Reservar Cita Online",
+    "services": {
+        "osteopathy": "Osteopatía",
+        "sports_physiotherapy": "Fisioterapia Deportiva",
+        "manual_therapy": "Terapia Manual",
+        "dry_needling": "Punción Seca",
+        "postural_rehabilitation": "Rehabilitación Postural",
+        "therapeutic_massage": "Masaje Terapéutico",
+        "initial_evaluation": "Evaluación Inicial"
+    }
+}

@@ -23,27 +23,5 @@
             }
         },
         "cta": "Descubre todos nuestros servicios"
-    },
-    "team": {
-        "title": "Conoce a Nuestro Equipo",
-        "description": "En ELON Physio contamos con un equipo multidisciplinario de fisioterapeutas y especialistas comprometidos con tu bienestar. Aquí te presentamos a algunos de nuestros profesionales, pero nuestro equipo completo es aún más amplio y está listo para acompañarte en tu proceso de recuperación.",
-        "cta": "Conocer al equipo completo",
-        "members": {
-            "first": {
-                "name": "Dr. Juan Pérez",
-                "role": "Fisioterapeuta Deportivo",
-                "description": "Especializado en el tratamiento y prevención de lesiones deportivas."
-            },
-            "second": {
-                "name": "Dr. Carlos Rodríguez",
-                "role": "Especialista en Terapia Manual",
-                "description": "Experto en técnicas de terapia manual para mejorar la movilidad y reducir el dolor."
-            },
-            "third": {
-                "name": "Dra. Sandra Martínez",
-                "role": "Rehabilitación Postquirúrgica",
-                "description": "Dedicada a ayudar a los pacientes a recuperarse después de cirugías."
-            }
-        }
     }
 }

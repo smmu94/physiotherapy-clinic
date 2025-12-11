@@ -1,0 +1,70 @@
+{
+  "title": "Sobre Nuestra Clínica",
+  "description": "Bienvenido a PhysioClinic, donde tu bienestar es nuestra prioridad. Creemos en un enfoque integral de la salud, combinando la ciencia de la fisioterapia con la calidez del cuidado humano para ayudarte a vivir sin dolor y en pleno movimiento",
+  "mission": {
+    "title": "Nuestra Misión",
+    "description": "Nuestra misión es proporcionar una atención de fisioterapia de alta calidad y personalizada a nuestros pacientes, ayudándoles a alcanzar su máximo potencial de movimiento y bienestar. Nos esforzamos por crear un ambiente de apoyo y comprensión, donde cada paciente se sienta escuchado y valorado."
+  },
+  "vision": {
+    "title": "Nuestra Visión",
+    "description": "Nuestra visión es ser la clínica de fisioterapia líder en la región, reconocida por nuestra excelencia en el tratamiento y prevención de lesiones, así como por nuestro enfoque humano y personalizado en el cuidado de nuestros pacientes."
+  },
+  "history": {
+    "title": "Nuestra Historia",
+    "beginning": {
+      "title": "El Comienzo",
+      "description": "Fundada por la Dra. Elena Vargas en un pequeño consultorio, con la idea de ofrecer un trato más humano y cercano a los pacientes. Desde entonces, hemos crecido y evolucionado, siempre con el objetivo de mejorar la calidad de vida de nuestros pacientes."
+    },
+    "growth": {
+      "title": "Crecimiento y Desarrollo",
+      "description": "A lo largo de los años, hemos ampliado nuestra oferta de servicios y nuestra red de profesionales, siempre con el objetivo de ofrecer una atención de la más alta calidad. Nuestro equipo de fisioterapeutas y especialistas está altamente cualificado y comprometido con el bienestar de nuestros pacientes."
+    },
+    "now": {
+      "title": "Hoy",
+      "subtitle": "Líderes en Innovación",
+      "description": "Hoy en día, somos una clínica de fisioterapia reconocida a nivel nacional, con una amplia experiencia en el tratamiento y prevención de lesiones. Nuestro enfoque innovador y nuestro compromiso con la calidad nos han llevado a ser líderes en la industria de la fisioterapia."
+    }
+  },
+  "team": {
+    "title": "Conoce a Nuestro Equipo",
+    "description": "En ELON Physio contamos con un equipo multidisciplinario de fisioterapeutas y especialistas comprometidos con tu bienestar. Aquí te presentamos a algunos de nuestros profesionales, pero nuestro equipo completo es aún más amplio y está listo para acompañarte en tu proceso de recuperación.",
+    "cta": {
+      "allTeam": "Conoce al Equipo Completo",
+      "title": "¿Listo para Iniciar tu Camino Hacia la Recuperación?",
+      "description": "Nuestro equipo está preparado para escucharte y diseñar el plan perfecto para ti. No dejes que el dolor espere",
+      "booking": "Agendar una cita"
+    },
+    "members": {
+      "first": {
+        "name": "Dr. Juan Pérez",
+        "role": "Fisioterapeuta Deportivo",
+        "description": "Especializado en el tratamiento y prevención de lesiones deportivas."
+      },
+      "second": {
+        "name": "Dr. Carlos Rodríguez",
+        "role": "Especialista en Terapia Manual",
+        "description": "Experto en técnicas de terapia manual para mejorar la movilidad y reducir el dolor."
+      },
+      "third": {
+        "name": "Dra. Sandra Martínez",
+        "role": "Rehabilitación Postquirúrgica",
+        "description": "Dedicada a ayudar a los pacientes a recuperarse después de cirugías."
+      },
+      "fourth": {
+        "name": "Dr. Miguel Torres",
+        "role": "Especialista en Fisioterapia Neurológica",
+        "description": "Profesional enfocado en la rehabilitación de pacientes con afecciones neurológicas complejas."
+      },
+      "fifth": {
+        "name": "Dra. Laura Gómez",
+        "role": "Fisioterapeuta en Suelo Pélvico",
+        "description": "Ayuda a mejorar la calidad de vida mediante tratamientos especializados en salud pélvica."
+      },
+      "sixth": {
+        "name": "Dr. Andrés Castillo",
+        "role": "Especialista en Terapia de Rehabilitación Funcional",
+        "description": "Enfocado en restaurar la funcionalidad y el movimiento a través de programas personalizados."
+      }
+    }
+  }
+}

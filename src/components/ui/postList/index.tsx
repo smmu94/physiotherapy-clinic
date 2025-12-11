@@ -10,6 +10,7 @@ export default async function PostList({ page }: { page: number }) {
   const posts = await fetchPosts(page);
   const totalPages = await fetchPostsPages();
   const t = getTranslations("blog-list");
+  const tCommon = getTranslations("common");
 
   return (
     <section className="flex flex-col gap-8 max-w-4xl w-full">
@@ -25,7 +26,7 @@ export default async function PostList({ page }: { page: number }) {
             href={routes.blog.detail(post.id)}
           >
             <Link href={routes.blog.detail(post.id)}>
-              <Button style="accent" className="px-3 py-2 text-preset-5">{t("cta.readMore")}</Button>
+              <Button style="accent" className="px-3 py-2 text-preset-5">{tCommon("readMore")}</Button>
             </Link>
           </Card>
         ))}
