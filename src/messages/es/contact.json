@@ -1,0 +1,24 @@
+{   
+    "title": "Contáctanos",
+    "description": "Estamos aquí para ayudarte. Rellena el formulario o utiliza nuestros datos de contacto directo.",
+    "data": {
+        "phone": "Teléfono",
+        "email": "Correo Electrónico",
+        "address": "Dirección"
+    },
+    "form": {
+        "name": {
+            "label": "Nombre",
+            "placeholder": "Escribe tu nombre"
+        },
+        "email": {
+            "label": "Correo Electrónico",
+            "placeholder": "Escribe tu correo electrónico"
+        },
+        "message": {
+            "label": "Mensaje",
+            "placeholder": "Escribe tu mensaje"
+        },
+        "submit": "Enviar mensaje"
+    }
+}

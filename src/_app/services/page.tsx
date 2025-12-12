@@ -7,8 +7,8 @@ import { getLocale, getTranslations, Link } from "next-globe-gen";
 export default function Services() {
   const t = getTranslations("services");
   const tCommon = getTranslations("common");
-  const locale = getLocale()
-  const services = getServices(locale)
+  const locale = getLocale();
+  const services = getServices(locale);
 
   return (
     <div className="flex flex-col gap-8 p-12 items-center">

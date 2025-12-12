@@ -21,3 +21,9 @@ export const UserFormSchema = z.object({
   password: z.string().min(8, "password_too_short"),
   is_admin: z.enum(["true", "false"]),
 });
+
+export const ContactSchema = z.object({
+  name: z.string().min(5, "name_too_short"),
+  email: z.string().email("invalid_email"),
+  message: z.string().min(10, "message_too_short"),
+});

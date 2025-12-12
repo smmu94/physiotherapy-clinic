@@ -37,3 +37,11 @@ export type CreateUserState = {
   message?: string | null;
 };
 
+export type ContactState = {
+  errors?: {
+    name?: string[];
+    email?: string[];
+    message?: string[];
+  };
+  message?: string | null; //
+}

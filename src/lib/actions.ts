@@ -9,9 +9,9 @@ import { signIn, signOut } from "../../auth";
 import { AuthError } from "next-auth";
 import { DEFAULT_POST_IMAGE } from "@/components/form/createPostForm/constants";
 import bcrypt from "bcryptjs";
-import { CreatePostSchema, UserFormSchema } from "./schemas";
-import { CreateUserState, PostState } from "./types";
-
+import { ContactSchema, CreatePostSchema, UserFormSchema } from "./schemas";
+import { ContactState, CreateUserState, PostState } from "./types";
+import nodemailer from "nodemailer";
 
 export async function createPost(prevState: PostState, formData: FormData, userId: string, userName: string) {
   let imageUrl: string = DEFAULT_POST_IMAGE;
@@ -161,4 +161,74 @@ export async function authenticate(
 // LOGOUT
 export async function logout(redirectTo: string) {
   await signOut({ redirectTo });
+}
+
+// CONTACT
+
+export async function sendContactForm(
+  prevState: ContactState,
+  formData: FormData
+): Promise<ContactState> {
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  const parsed = ContactSchema.safeParse(data);
+
+  if (!parsed.success) {
+    return {
+      errors: parsed.error.flatten().fieldErrors,
+      message: "validation_error",
+    };
+  }
+
+  const { name, email, message } = parsed.data;
+
+  try {
+    await sql`
+      INSERT INTO contact_messages (name, email, message, created_at)
+      VALUES (${name}, ${email}, ${message}, ${new Date().toISOString()})
+    `;
+  } catch (err) {
+    console.error("DB error:", err);
+    return {
+      errors: {},
+      message: "db_send_contact_form_error",
+    };
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
+      },
+    });
+
+    await transporter.sendMail({
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_USER,
+      replyTo: email,
+      subject: `Nuevo mensaje de ${name} (web)`,
+      text: `
+        Nombre: ${name}
+        Email: ${email}
+        Mensaje:
+        ${message}
+              `,
+    });
+  } catch (err) {
+    console.error("Email error:", err);
+    return {
+      errors: {},
+      message: "email_error",
+    };
+  }
+
+  return {
+    message: "message_sent",
+  };
 }

@@ -1,0 +1,24 @@
+{   
+    "title": "Contact Us",
+    "description": "We are here to help you. Fill out the form or use our direct contact information.",
+    "data": {
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address"
+    },
+    "form": {
+        "name": {
+            "label": "Name",
+            "placeholder": "Enter your name"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "Enter your email"
+        },
+        "message": {
+            "label": "Message",
+            "placeholder": "Enter your message"
+        },
+        "submit": "Send message"
+    }
+}
