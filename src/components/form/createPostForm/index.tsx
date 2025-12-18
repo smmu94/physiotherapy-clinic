@@ -3,27 +3,37 @@
 import Button from "@/components/ui/button";
 import { createPost } from "@/lib/actions";
 import Image from "next/image";
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { DEFAULT_POST_IMAGE } from "./constants";
-import { useTranslations } from "next-globe-gen";
+import { useRouter, useTranslations } from "next-globe-gen";
 import { PostState } from "@/lib/types";
+import { useToast } from "@/components/tailframes/toast";
+import { routes } from "@/lib/routes";
 
-export default function CreatePostForm({ user }: {user: {
-  id: string;
-  name: string;
-}}) {
+export default function CreatePostForm({ user }: {user: { id: string; name: string; }}) {
+  const { success, error } = useToast();
   const initialState: PostState = { message: null, errors: {} };
   const wrappedCreatePost = (prevState: PostState, formData: FormData) =>
     createPost(prevState, formData, user.id, user.name);
-  const [state, formAction] = useActionState(wrappedCreatePost, initialState);
+  
+  const [state, formAction, isPending] = useActionState(wrappedCreatePost, initialState);
   const [preview, setPreview] = useState<string>(DEFAULT_POST_IMAGE);
-
+  
+  const lastProcessedTimestamp = useRef<number | undefined>(undefined);
+  const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("blog-create");
   const tErrors = useTranslations("errors");
+  const router = useRouter();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        error(tErrors("image_invalid_size_message"));
+        e.target.value = ""
+        setPreview(DEFAULT_POST_IMAGE);
+        return;
+      }
       const reader = new FileReader();
       reader.onloadend = () => setPreview(reader.result as string);
       reader.readAsDataURL(file);
@@ -32,8 +42,27 @@ export default function CreatePostForm({ user }: {user: {
     }
   };
 
+  useEffect(() => {
+    if (!state.message || !state.timestamp) return;
+    if (state.timestamp === lastProcessedTimestamp.current) return;
+
+    lastProcessedTimestamp.current = state.timestamp;
+
+    const isSuccess = state.message === "post_created_success";
+    const message = tErrors(state.message as keyof typeof tErrors);
+
+    if (isSuccess) {
+      success(message);
+      formRef.current?.reset();
+      router.push(routes.blog.list);
+    } else {
+      error(message);
+    }
+  }, [state.timestamp, state.message, success, error, tErrors, router]);
+
   return (
     <form
+      ref={formRef}
       action={formAction}
       className="flex flex-col gap-6 rounded-lg bg-white p-6 shadow-sm w-full max-w-5xl"
     >
@@ -45,12 +74,13 @@ export default function CreatePostForm({ user }: {user: {
               {t("title.label")}
             </label>
             <input
+              key={`title-${state.timestamp}`}
               id="title"
               name="title"
               type="text"
               placeholder={t("title.placeholder")}
+              defaultValue={state.formData?.get("title")?.toString() || ""}
               className="w-full rounded-md border border-neutral-light py-2.5 pl-6 text-preset-5 outline-0 placeholder:text-neutral-medium focus:border-accent focus:ring-1 focus:ring-accent"
-              aria-describedby="title-error"
             />
             <div className="min-h-5 mt-1">
               {state.errors?.title?.map((error) => (
@@ -65,12 +95,13 @@ export default function CreatePostForm({ user }: {user: {
               {t("content.label")}
             </label>
             <textarea
+              key={`content-${state.timestamp}`}
               id="content"
               name="content"
+              defaultValue={state.formData?.get("content")?.toString() || ""}
               placeholder={t("content.placeholder")}
               rows={15}
               className="w-full rounded-md border border-neutral-light py-2.5 pl-6 text-preset-5 outline-0 placeholder:text-neutral-medium focus:border-accent focus:ring-1 focus:ring-accent"
-              aria-describedby="content-error"
             />
             <div className="min-h-5 mt-1">
               {state.errors?.content?.map((error) => (
@@ -96,7 +127,6 @@ export default function CreatePostForm({ user }: {user: {
             accept="image/*"
             onChange={handleImageChange}
             className="hidden"
-            aria-describedby="image-error"
           />
           <div className="min-h-5 mt-1">
             {state.errors?.image_url?.map((error) => (
@@ -117,10 +147,7 @@ export default function CreatePostForm({ user }: {user: {
           </div>
         </div>
       </div>
-      {state.message && (
-        <div className="text-red-500 text-preset-5 mt-2">{tErrors(state.message as keyof typeof tErrors)}</div>
-      )}
-      <Button className="w-full mt-4" type="submit">
+      <Button className="w-full mt-4" type="submit" loading={isPending}>
         {t("cta")}
       </Button>
     </form>

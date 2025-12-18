@@ -9,12 +9,16 @@
   "image_upload_message": "Image upload error.",
   "db_create_post_error": "Database error: Could not create the post.",
   "validation_error": "Validation error: Invalid fields.",
-  "db_create_user_error:": "Database error: Could not create the user.",
+  "post_created_success": "Post created successfully.",
+  "db_create_user_error": "Database error: Could not create the user.",
+  "user_created": "User created successfully.",
   "name_too_short": "The name must be at least 5 characters long.",
   "invalid_email": "The email address is not valid.",
   "password_too_short": "The password must be at least 8 characters long.",
   "message_too_short": "The message must be at least 10 characters long.",
   "db_send_contact_form_error": "Database error: Could not save the message.",
   "email_error": "The email could not be sent.",
-  "message_sent": "Message sent successfully."
+  "message_sent": "Message sent successfully.",
+  "invalid_credentials": "Invalid username or password.",
+  "authenticate_error_default": "An unexpected error occurred. Please try again later."
 }

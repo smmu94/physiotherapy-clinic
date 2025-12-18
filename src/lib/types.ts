@@ -25,6 +25,8 @@ export type PostState = {
     image_url?: string[];
   };
   message?: string | null;
+  formData?: FormData;
+  timestamp?: number;
 };
 
 export type CreateUserState = {
@@ -35,6 +37,8 @@ export type CreateUserState = {
     is_admin?: string[];
   };
   message?: string | null;
+  formData?: FormData;
+  timestamp?: number;
 };
 
 export type ContactState = {
@@ -43,5 +47,13 @@ export type ContactState = {
     email?: string[];
     message?: string[];
   };
-  message?: string | null; //
+  message?: string | null;
+  formData?: FormData;
+  timestamp?: number;
+}
+
+export type AuthState = {
+  message: string | null;
+  formData?: FormData;
+  timestamp?: number;
 }

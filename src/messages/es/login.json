@@ -1,9 +1,5 @@
 {
     "title": "Inicio de sesión de administrador",
     "password": "Contraseña",
-    "cta": "Iniciar sesión",
-    "errors": {
-        "invalid_credentials": "Nombre de usuario o contraseña inválidos.",
-        "default": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
-    }
+    "cta": "Iniciar sesión"
 }

@@ -10,10 +10,15 @@ import { AuthError } from "next-auth";
 import { DEFAULT_POST_IMAGE } from "@/components/form/createPostForm/constants";
 import bcrypt from "bcryptjs";
 import { ContactSchema, CreatePostSchema, UserFormSchema } from "./schemas";
-import { ContactState, CreateUserState, PostState } from "./types";
+import { AuthState, ContactState, CreateUserState, PostState } from "./types";
 import nodemailer from "nodemailer";
 
-export async function createPost(prevState: PostState, formData: FormData, userId: string, userName: string) {
+export async function createPost(
+  prevState: PostState,
+  formData: FormData,
+  userId: string,
+  userName: string
+): Promise<PostState> {
   let imageUrl: string = DEFAULT_POST_IMAGE;
   const imageFile = formData.get("image") as File | null;
 
@@ -24,6 +29,8 @@ export async function createPost(prevState: PostState, formData: FormData, userI
         return {
           errors: { image_url: ["image_invalid_type_error"] },
           message: "image_invalid_type_message",
+          formData,
+          timestamp: Date.now(),
         };
       }
 
@@ -31,6 +38,8 @@ export async function createPost(prevState: PostState, formData: FormData, userI
         return {
           errors: { image_url: ["image_invalid_size_error"] },
           message: "image_invalid_size_message",
+          formData,
+          timestamp: Date.now(),
         };
       }
 
@@ -55,6 +64,8 @@ export async function createPost(prevState: PostState, formData: FormData, userI
       return {
         errors: { image_url: ["image_upload_error"] },
         message: "image_upload_message",
+        formData,
+        timestamp: Date.now(),
       };
     }
   }
@@ -69,29 +80,42 @@ export async function createPost(prevState: PostState, formData: FormData, userI
     return {
       errors: validateFields.error.flatten().fieldErrors as PostState["errors"],
       message: "validation_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
   const { title, content } = validateFields.data;
-  const created_at = new Date().toISOString();
 
   try {
     await sql`
       INSERT INTO posts (title, content, image_url, created_at, author_id, author_name)
-      VALUES (${title}, ${content}, ${imageUrl}, ${created_at}, ${userId}, ${userName})
+      VALUES (
+        ${title},
+        ${content},
+        ${imageUrl},
+        ${new Date().toISOString()},
+        ${userId},
+        ${userName}
+      )
     `;
   } catch (error) {
     console.error("Database error:", error);
     return {
       errors: {},
       message: "db_create_post_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
   revalidatePath(routes.blog.list);
-  redirect(routes.blog.list);
-}
 
+  return {
+    message: "post_created_success",
+    timestamp: Date.now(),
+  };
+}
 export async function createUser(
   prevState: CreateUserState,
   formData: FormData
@@ -107,6 +131,8 @@ export async function createUser(
     return {
       errors: parsed.error.flatten().fieldErrors,
       message: "validation_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
@@ -122,18 +148,26 @@ export async function createUser(
 
     revalidatePath(routes.users);
 
-    return { message: "user_created" };
+    return { 
+      message: "user_created", 
+      timestamp: Date.now() 
+    };
   } catch (error) {
     console.error("DB error:", error);
-    return { message: "db_create_user_error" };
+    return { 
+      message: "db_create_user_error", 
+      errors: {}, 
+      formData, 
+      timestamp: Date.now() 
+    };
   }
 }
 
 // AUTHENTICATION
 export async function authenticate(
-  prevState: string | undefined,
+  prevState: AuthState,
   formData: FormData
-) {
+): Promise<AuthState> {
   try {
     const redirectTo = formData.get("redirectTo") as string;
     const locale = formData.get("locale") as string || "es";
@@ -150,14 +184,23 @@ export async function authenticate(
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
-          return "invalid_credentials";
+          return {
+            message: "invalid_credentials",
+            formData,
+            timestamp: Date.now(),
+          };
         default:
-          return "default";
+          return {
+            message: "authenticate_error_default",
+            formData,
+            timestamp: Date.now(),
+          };
       }
     }
     throw error;
   }
 }
+
 // LOGOUT
 export async function logout(redirectTo: string) {
   await signOut({ redirectTo });
@@ -181,6 +224,8 @@ export async function sendContactForm(
     return {
       errors: parsed.error.flatten().fieldErrors,
       message: "validation_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
@@ -196,6 +241,8 @@ export async function sendContactForm(
     return {
       errors: {},
       message: "db_send_contact_form_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
@@ -213,22 +260,20 @@ export async function sendContactForm(
       to: process.env.MAIL_USER,
       replyTo: email,
       subject: `Nuevo mensaje de ${name} (web)`,
-      text: `
-        Nombre: ${name}
-        Email: ${email}
-        Mensaje:
-        ${message}
-              `,
+      text: `Nombre: ${name}\nEmail: ${email}\nMensaje:\n${message}`,
     });
   } catch (err) {
     console.error("Email error:", err);
     return {
       errors: {},
       message: "email_error",
+      formData,
+      timestamp: Date.now(),
     };
   }
 
   return {
     message: "message_sent",
+    timestamp: Date.now(),
   };
 }

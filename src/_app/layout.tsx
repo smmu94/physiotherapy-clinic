@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import Footer from "@/components/layout/footer";
 import { auth } from "../../auth";
+import { ToastProvider } from "@/components/tailframes/toast";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -35,11 +36,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html>
       <body className={`${montserrat.variable} ${poppins.variable} antialiased min-h-screen flex flex-col`}>
-        <Navbar session={session} />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <ToastProvider>
+          <Navbar session={session} />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );
