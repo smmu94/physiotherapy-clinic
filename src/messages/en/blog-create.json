@@ -1,4 +1,8 @@
 {
+  "breadcrumb": {
+    "blog": "Blog",
+    "createPost": "Create post"
+  },
   "title": {
     "label": "Title",
     "placeholder": "Enter the post title"
