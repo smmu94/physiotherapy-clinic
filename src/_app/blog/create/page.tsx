@@ -3,14 +3,18 @@ import { Metadata } from "next";
 import { auth } from "../../../../auth";
 import { redirect } from "next/navigation";
 import { routes } from "@/lib/routes";
+import BreadCrumb from "@/components/ui/breadCrumb";
+import { getTranslations } from "next-globe-gen";
+
 
 export const metadata: Metadata = {
   title: "Create Post",
 };
 
 export default async function CreatePost() {
+  const t = getTranslations("blog-create");
   const session = await auth();
-  
+
   if (!session?.user?.id || !session?.user?.name) {
     redirect(routes.login);
   }
@@ -21,8 +25,15 @@ export default async function CreatePost() {
   };
 
   return (
-    <div className="bg-accent p-10 h-full flex justify-center items-start">
-      <CreatePostForm user={user} />
+    <div className="bg-accent p-10 min-h-screen flex flex-col gap-8">
+      <BreadCrumb breadcrumb={[
+        {title: t("breadcrumb.blog"), href: routes.blog.list},
+        {title: t("breadcrumb.createPost"), href: routes.blog.create},
+        ]}
+      />
+      <div className="flex justify-center">
+        <CreatePostForm user={user} />
+      </div>
     </div>
   );
 }

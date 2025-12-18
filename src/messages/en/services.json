@@ -1,4 +1,8 @@
 {
+  "breadcrumb": {
+    "services": "Services",
+    "detail": "Service Detail"
+  },
   "title": "Our Services",
   "subtitle": "Discover how our specialized therapies can help you achieve your health and wellness goals.",
   "services": [
