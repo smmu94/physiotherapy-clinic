@@ -15,7 +15,7 @@
     "cloudinary": "^2.8.0",
     "clsx": "^2.1.1",
     "i18next": "^25.6.3",
-    "next": "16.0.7",
+    "next": "16.0.10",
     "next-auth": "5.0.0-beta.30",
     "next-globe-gen": "^1.8.1",
     "next-i18next": "^15.4.2",
